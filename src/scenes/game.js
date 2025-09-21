@@ -10,7 +10,7 @@ export default function game() {
   const citySfx = k.play("city", { volume: 0.2, loop: true });
   
   // Set gravity for the game environment
-  k.setGravity(9100); /// ПАРАМЕЕЕЕЕТР ГРАФИТАЦИИИИ ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ!
+  k.setGravity(9100*0.9); /// ПАРАМЕЕЕЕЕТР ГРАФИТАЦИИИИ ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ!
 
   // Define background pieces and their initial positions for the scrolling effect
   const bgPieceWidth = 1920;
@@ -61,7 +61,7 @@ export default function game() {
     k.play("ring", { volume: 0.5 }); // Play ring collection sound
     k.destroy(ring); // Destroy the collected ring
     score++; // Increment the score
-    scoreText.text = `SCORE : ${score}`; // Update score display
+    scoreText.text = `СЧЁТ : ${score}`; // Update score display
     sonic.ringCollectUI.text = "+1"; // Show collected ring UI for a moment
     k.wait(1, () => {
       sonic.ringCollectUI.text = ""; // Clear the UI after 1 second
@@ -79,7 +79,7 @@ export default function game() {
       sonic.jump(); // Make Sonic jump
       scoreMultiplier += 1; // Increase score multiplier
       score += 10 * scoreMultiplier; // Update the score with the multiplier
-      scoreText.text = `SCORE : ${score}`; // Update the score display
+      scoreText.text = `СЧЁТ : ${score}`; // Update the score display
       // Display the score multiplier UI
       if (scoreMultiplier === 1)
         sonic.ringCollectUI.text = `+${10 * scoreMultiplier}`;
